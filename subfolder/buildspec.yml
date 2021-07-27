@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      golang: 1.13
+  pre_build:
+    commands:
+      - echo 'prebuild'
+  build:
+    commands:
+      - echo 'Compiling the Java Code'
+      - javac -cp . HelloWorld.java
+  post_build:
+    commands:
+      - echo "Would deploy here"
+artifacts:
+  files:
+    - 'HelloWorld.class'
